@@ -2,7 +2,9 @@ const express = require('express'),
     http = require('http'),
     morgan = require('morgan');
 const bodyParser = require('body-parser');
-const dishRouter = require('./routes/dishrouter');
+const dishRouter = require('./routes/dishRouter');
+const promoRouter = require('./routes/promoRouter');
+const leaderRouter = require('./routes/leaderRouter');
 
 const hostname = 'localhost';
 const port = 3100;
@@ -16,6 +18,10 @@ app.use(bodyParser.json());
 // For dishes end point
 
 app.use('/dishes', dishRouter);
+app.use('/promotions', promoRouter);
+app.use('/leaders', leaderRouter);
+
+
 // For dishes:dishId parameter end point
 
 
